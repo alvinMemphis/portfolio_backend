@@ -1,2 +1,2 @@
-# portifolio_backend
+# portifolio backend
 Backend to my personal portfolio
