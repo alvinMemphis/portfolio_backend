@@ -1,13 +1,17 @@
 package main
 
+import (
+	"fmt"
+	"log"
+	"net/http"
+)
 
-import "fmt"
+func portfolioSever(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "welcome to the new world code 4Chainz")
+}
 
+func main() {
+	http.HandleFunc("/", portfolioSever)
+	log.Fatal(http.ListenAndServe(":8080", nil))
 
-
-
-
-
-func  main(){
-	fmt.Println("hello Alvin Blog")	
 }
