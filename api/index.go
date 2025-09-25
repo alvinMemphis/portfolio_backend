@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func SetupRouter() *gin.Engine {
+func setupRouter() *gin.Engine {
 	// Create a Gin router with default middleware (logger and recovery)
 	r := gin.Default()
 	// Define a simple GET endpoint
@@ -22,6 +22,6 @@ func SetupRouter() *gin.Engine {
 func Handler(r *gin.Context) {
 
 	// Create a Gin router with default middleware (logger and recovery)
-	app := SetupRouter()
+	app := setupRouter()
 	app.ServeHTTP(r.Writer, r.Request)
 }
