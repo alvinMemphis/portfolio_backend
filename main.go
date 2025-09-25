@@ -1,17 +1,24 @@
 package main
 
 import (
-	"fmt"
-	"log"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
-func portfolioSever(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "welcome to the new world code 4Chainz")
-}
-
 func main() {
-	http.HandleFunc("/", portfolioSever)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	// Create a Gin router with default middleware (logger and recovery)
+	r := gin.Default()
 
+	// Define a simple GET endpoint
+	r.GET("/ping", func(c *gin.Context) {
+		// Return JSON response
+		c.JSON(http.StatusOK, gin.H{
+			"message": "pong",
+		})
+	})
+
+	// Start server on port 8080 (default)
+	// Server will listen on 0.0.0.0:8080 (localhost:8080 on Windows)
+	r.Run()
 }
