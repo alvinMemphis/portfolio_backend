@@ -19,9 +19,9 @@ func setupRouter() *gin.Engine {
 	return r
 }
 
-func Handler(r *gin.Context) {
+func Handler(w http.ResponseWriter, r *http.Request) {
 
 	// Create a Gin router with default middleware (logger and recovery)
 	app := setupRouter()
-	app.ServeHTTP(r.Writer, r.Request)
+	app.ServeHTTP(w, r)
 }
