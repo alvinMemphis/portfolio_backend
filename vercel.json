@@ -4,11 +4,11 @@
   [
     {
       "source": "/api/(.*)",
-      "destination": "/api/entrypoint.go"
+      "destination": "/api/index.go"
     },
     {
       "source": "/.well-known/nostr.json",
-      "destination": "/api/entrypoint.go"
+      "destination": "/api/index.go"
     }
   ]
 }
